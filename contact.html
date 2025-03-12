@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Julia Shvartsman</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background-color: #fef6f9;
+        --circle-color: #d9bfcf;
+        --text-color: #333333;
+        --heading-color: #2a2a2a;
+        --shadow: rgba(0, 0, 0, 0.06);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Playfair Display", "Cormorant Garamond",
+          "Libre Baskerville", serif;
+      }
+
+      body {
+        background-color: var(--background-color);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--text-color);
+        line-height: 1.7;
+        font-weight: 300;
+        letter-spacing: 0.3px;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        width: 100%;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--heading-color);
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #000;
+      }
+
+      nav a.active {
+        font-weight: 600;
+        position: relative;
+      }
+
+      nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--circle-color);
+      }
+
+      .page-title {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .page-title h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--heading-color);
+        margin-bottom: 10px;
+      }
+
+      .page-title p {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 40px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .contact-info p {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        line-height: 1.8;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .contact-icon {
+        font-size: 1.5rem;
+        color: var(--heading-color);
+        opacity: 0.8;
+      }
+
+      .contact-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+      }
+
+      .contact-text a {
+        color: var(--heading-color);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+      }
+
+      .contact-text a:hover {
+        border-color: var(--heading-color);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--circle-color);
+        color: var(--heading-color);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        color: var(--heading-color);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--circle-color);
+        box-shadow: 0 0 0 3px rgba(217, 191, 207, 0.2);
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: var(--circle-color);
+        color: var(--heading-color);
+        border: none;
+        border-radius: 30px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .back-to-home {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 25px;
+        background-color: var(--circle-color);
+        color: var(--heading-color);
+        text-decoration: none;
+        border-radius: 30px;
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .back-to-home:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .page-title h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="index.html" class="logo">Julia Shvartsman</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+      </header>
+
+      <div class="page-title">
+        <h1>Get in Touch</h1>
+        <p>Let's discuss your project</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>
+            Feel free to reach out with your ideas or inquiries using the form
+            or contact details below.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">Chicago, IL</div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <a href="mailto:julia_shvartsman@berkeley.edu"
+                >julia_shvartsman@berkeley.edu</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-text">
+              <a href="tel:+18475717144">847-571-7144</a>
+            </div>
+          </div>
+
+          <div>
+            <p>Connect with me on social media:</p>
+            <div class="social-links">
+              <a href="#" class="social-link">Li</a>
+
+              <a href="#" class="social-link">Ig</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-to-home">Back to Home</a>
+    </div>
+  </body>
+</html>

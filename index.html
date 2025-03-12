@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JULIAS WEBSITE</title>
+    <link rel="stylesheet" href="project.css" />
+   
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-design">
+      <div class="bg-circle bg-circle-1"></div>
+      <div class="bg-circle bg-circle-2"></div>
+  </div>
+
+  <div class="container">
+      <div class="profile-container">
+          <!-- Center Profile Image -->
+          <div class="profile-circle">
+              <img src="IMG_7134.JPG" alt="Julia Shvartsman" class="profile-image">
+          </div>
+          
+          <div class="profile-name">
+              <h1>Julia Shvartsman</h1>
+              <p>Designer & Data Scientist</p>
+          </div>
+          
+          <!-- Circles Below Profile -->
+          <div class="orbit-container">
+              <div class="orbit">
+                  <div class="top-circles">
+                      <!-- About Circle -->
+                      <a href="about.html" class="circle about-circle">
+                          <div class="circle-icon">👋</div>
+                          <h2 class="circle-title">About</h2>
+                          <p class="circle-brief">My story</p>
+                      </a>
+
+                      <!-- Projects Circle -->
+                      <a href="projects.html" class="circle projects-circle">
+                          <div class="circle-icon">🚀</div>
+                          <h2 class="circle-title">Projects</h2>
+                          <p class="circle-brief">My work</p>
+                      </a>
+
+                      <!-- Skills Circle -->
+                      <a href="skills.html" class="circle skills-circle">
+                          <div class="circle-icon">💼</div>
+                          <h2 class="circle-title">Skills</h2>
+                          <p class="circle-brief">My expertise</p>
+                      </a>
+                  </div>
+                  
+                  <div class="bottom-circles">
+                      <!-- Contact Circle -->
+                      <a href="contact.html" class="circle contact-circle">
+                          <div class="circle-icon">✉️</div>
+                          <h2 class="circle-title">Contact</h2>
+                          <p class="circle-brief">Get in touch</p>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Overlay for background when detailed view is open -->
+  <div class="overlay"></div>
+  
+  <!-- Full Detail Section Containers -->
+  <div class="full-details" id="about-details">
+      <h2>About Me</h2>
+      <div class="full-details-content">
+          <p>I'm a designer and developer with over 5 years of experience creating engaging digital products. My approach combines aesthetic sensibility with technical expertise to build solutions that are both beautiful and functional.</p>
+          <p>After completing my degree in Design & Technology at New York University, I worked with several startups and established companies to develop their digital presence and product offerings.</p>
+          <p>My philosophy centers on user-centric design that balances innovation with clarity. I believe the most successful digital experiences feel intuitive while still offering moments of delight.</p>
+          <p>Outside of my professional work, I stay current with industry developments, contribute to open-source projects, and enjoy landscape photography.</p>
+      </div>
+      <button class="close-btn">×</button>
+  </div>
+  
+ 
+  <div class="full-details" id="contact-details">
+      <h2>Contact</h2>
+      <div class="full-details-content">
+          <p>I'm currently available for freelance projects and collaboration opportunities. Please reach out with your ideas or inquiries.</p>
+          <div class="contact-form">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="Your email address">
+              </div>
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" placeholder="Tell me about your project or inquiry"></textarea>
+              </div>
+              <button class="submit-btn">
+    <p>tony sucks.</p>
+  </body>
+</html>
